@@ -1,8 +1,26 @@
 <html>
-    <head>
 
-    </head>
-    <body>
-        <div>{{something}}</div>
-    </body>
+<body>
+    <div><form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="submit" value="Sign Out"/>
+    </form></div>
+
+    <div>
+        <form method="post">
+            <input type="text" name="name" placeholder="Введите имя" />
+            <input type="text" name="email" placeholder="Введите email">
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+
+    {{#messages}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{name}}</span>
+        <i>{{email}}</i>
+    </div>
+    {{/messages}}
+</body>
 </html>

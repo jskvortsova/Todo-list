@@ -1,4 +1,4 @@
-package com.fitedpro.shop.domain;
+package com.example.sweater.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,24 +6,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Message {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-
     private String name;
-
     private String email;
 
-    public String getPassword() {
-        return password;
+    public Message() {
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public Message(String text, String email) {
+        this.name = text;
+        this.email = email;
     }
 
-    private String password;
+    public void setText(String text) {
+        this.name = text;
+    }
+
+    public String getText() {
+        return name;
+    }
 
     public Integer getId() {
         return id;
@@ -33,22 +37,11 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
+    public String getTag() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setTag(String email) {
         this.email = email;
     }
-
-
-
 }
