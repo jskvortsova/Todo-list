@@ -10,24 +10,23 @@ public class Message {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-
-    private String text;
-    private String tag;
+    private String name;
+    private String email;
 
     public Message() {
     }
 
-    public Message(String text, String tag) {
-        this.text = text;
-        this.tag = tag;
+    public Message(String text, String email) {
+        this.name = text;
+        this.email = email;
     }
 
     public void setText(String text) {
-        this.text = text;
+        this.name = text;
     }
 
     public String getText() {
-        return text;
+        return name;
     }
 
     public Integer getId() {
@@ -39,10 +38,10 @@ public class Message {
     }
 
     public String getTag() {
-        return tag;
+        return email;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setTag(String email) {
+        this.email = email;
     }
 }
